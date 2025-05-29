@@ -3,42 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inveresk-Community-Garden</title>
+  <title>Inveresk Community Garden</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: Arial, sans-serif;
+    }
+
+    nav {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f0f8f0;
-      text-align: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo img {
+      width: 10rem;
     }
 
     h1 {
-      margin-bottom: 0.5rem;
-      color: #2e7d32;
+      font-size: 1.5rem;
+      color: #000;
     }
 
-    p {
-      margin-bottom: 2rem;
-      color: #444;
+    .nav-right {
+      /* Placeholder for future dropdown */
+      width: 100px;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 4px;
     }
 
     iframe {
-      width: 80%;
-      max-width: 900px;
-      height: 500px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
+      width: 100%;
+      height: calc(100vh - 80px); /* Full height minus nav height */
+      border: none;
     }
+
+    p {
+      display: none; /* Hidden to prioritize iframe and immersive experience */
+    }
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .logo img {
+    width: 5rem;
+  }
+
+  .nav-right {
+    width: 0;
+    height: 0;
+    margin-top: 0.5rem;
+  }
+
+  iframe {
+    height: calc(100vh - 150px); /* Adjust if nav grows vertically */
+  }
+}
   </style>
 </head>
 <body>
-  <h1>Inveresk-Community-Garden</h1>
-  <p>Find what's growing and ripe to eat, and how to use it!</p>
+  <nav>
+    <div class="logo"><img src="University-of-Tasmania-logo.jpg" alt="University of Tasmania Logo"></div>
+    <h1>Inveresk Community Garden</h1>
+    <div class="nav-right"></div>
+  </nav>
   <iframe src="cg"></iframe>
 </body>
 </html>
